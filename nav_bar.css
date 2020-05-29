@@ -35,4 +35,8 @@ a:hover {
 }
 
 @media(max-width: 800px) {
+    .nav_bar a {
+        padding: 0px;
+        width: 100%;
+    }
 }
