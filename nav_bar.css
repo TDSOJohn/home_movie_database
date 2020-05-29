@@ -35,9 +35,4 @@ a:hover {
 }
 
 @media(max-width: 800px) {
-    .nav_bar li {
-        display: block;
-        padding: 15px;
-        width: 100%;
-    }
 }
