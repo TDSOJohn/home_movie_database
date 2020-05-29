@@ -1,4 +1,6 @@
 <?php
+
+    var_dump($_SERVER);
     $title = $_GET['name'];
     $key = '74a10e01';
     $url = 'http://www.omdbapi.com/?'.'apikey='.$key.'&t='.$title;
