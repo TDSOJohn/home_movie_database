@@ -1,6 +1,6 @@
 <?php
 
-    var_dump($_SERVER);
+#    var_dump($_SERVER);
     $title = $_GET['name'];
     $key = '74a10e01';
     $url = 'http://www.omdbapi.com/?'.'apikey='.$key.'&t='.$title;
@@ -15,7 +15,7 @@
 
     $a = array(1, 2, array("a", "b", "c"));
     var_dump($a);
-    
+
     ob_start();
     var_dump($decoded_response);
     var_dump(json_decode($response, true));
