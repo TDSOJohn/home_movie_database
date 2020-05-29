@@ -11,4 +11,5 @@
     $response = curl_exec($ch);
     echo "\n $response";
     curl_close($ch);
+    echo "hi everyone!";
 ?>
