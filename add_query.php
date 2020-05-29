@@ -29,7 +29,7 @@
     }
 
     $response = get_web_page($url);
-    echo("\n $response");
+#    echo("\n $response");
     $resArr = array();
     $resArr = json_decode($response);
     echo "<pre>"; print_r($resArr); echo "</pre>";
