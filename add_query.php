@@ -2,6 +2,7 @@
     echo date('Y-m-d H:i:s');
     $title = $_GET['name'];
     $key = '74a10e01';
+    echo "\n $key";
     $url = 'http://www.omdbapi.com/t='.$title.'&apikey='.$key+'/';
     echo "\n $url";
 
@@ -29,7 +30,7 @@
     }
 
     $response = get_web_page($url);
-#    echo("\n $response");
+    echo("\n $response");
     $resArr = array();
     $resArr = json_decode($response);
     echo "<pre>"; print_r($resArr); echo "</pre>";
