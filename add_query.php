@@ -2,7 +2,7 @@
     echo date('Y-m-d H:i:s');
     $title = $_GET['name'];
     $key = '74a10e01';
-    $url = 'http://www.omdbapi.com/t='.$title.'&apikey='.$key;
+    $url = 'http://www.omdbapi.com/t='.'apikey='.$key.'&'.$title;
     echo "\n $url";
 
     $ch = curl_init();
