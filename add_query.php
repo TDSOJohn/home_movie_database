@@ -5,10 +5,13 @@
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "$url");
-
     $response = curl_exec($ch);
-    echo "\n $response";
     curl_close($ch);
-    var_dump(json_decode($response));
+
+    echo "\n $response";
+    $decoded_response = json_decode($response);
+    echo "\n $decoded_response";
+
+    var_dump($decoded_response);
     var_dump(json_decode($response, true));
 ?>
