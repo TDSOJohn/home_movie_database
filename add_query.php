@@ -13,6 +13,9 @@
     echo "\n $response";
     $decoded_response = json_decode($response);
 
+    $a = array(1, 2, array("a", "b", "c"));
+    var_dump($a);
+    
     ob_start();
     var_dump($decoded_response);
     var_dump(json_decode($response, true));
