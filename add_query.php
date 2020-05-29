@@ -5,7 +5,7 @@
     $url = 'http://www.omdbapi.com/t='.$title.'&apikey='.$key;
     echo "\n $url";
 
-    function get_web_page($url) {
+    function get_web_page($i_url) {
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page
             CURLOPT_HEADER         => false,  // don't return headers
@@ -18,7 +18,7 @@
             CURLOPT_TIMEOUT        => 120,    // time-out on response
         );
 
-        $ch = curl_init($url);
+        $ch = curl_init($i_url);
         curl_setopt_array($ch, $options);
 
         $content  = curl_exec($ch);
@@ -29,6 +29,7 @@
     }
 
     $response = get_web_page($url);
+    echo("\n $response");
     $resArr = array();
     $resArr = json_decode($response);
     echo "<pre>"; print_r($resArr); echo "</pre>";
