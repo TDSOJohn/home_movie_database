@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" type="text/css" media="all" href="nav_bar.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="search.css"/>
+    </head>
+
+    <body>
+        <header>
+            <div class="nav_bar">
+                <ul>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="add.html">Add</a></li>
+                    <li><a href="coverflow.html">Coverflow</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="main_content">
+            <h1>Search</h1>
+            <form>
+                <div class="search_box">
+                    <div class="input_section">
+                        <label>Name:</label>
+                        <input type="text" name="name" placeholder="Enter movie name">
+                    </div>
+                    <div class="input_section">
+                        <label>Director:</label>
+                        <input type="text" name="director" placeholder="Enter director's name">
+                    </div>
+                    <input class="button" type="submit" name="submit" value="Search" formenctype="text/plain">
+                </div>
+            </form>
+            <a href="search_query.php?name=PHP&director=W3schools.com">Test $GET</a>
+        </div>
+    </body>
+</html>
