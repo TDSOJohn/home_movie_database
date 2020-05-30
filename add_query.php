@@ -20,9 +20,21 @@
         return $out_data;
     }
 
-    function append_to_json($in_file, $in_data)
+#   reads a file, attempts to decode with json_decode, returns array of object(stdClass) of FALSE
+    function read_from_json($filename)
     {
-        file_put_contents($in_file, $in_data, FILE_APPEND | LOCK_EX);
+        if(file_exists($filename))
+        {
+            $handle = fopen($filename, 'r');
+            $cod_content = fread($handle, filesize($filename));
+            fclose($handle);
+
+            $dec_content = json_decode($cod_content);
+            return $dec_content;
+        } else
+        {
+            return FALSE;
+        }
     }
 
     $title = $_GET['name'];
@@ -32,5 +44,6 @@
     var_dump(json_decode($json_movie_info));
 
     $file = 'movies_database.json';
-    append_to_json($file, $json_movie_info);
+    $movies_array = read_from_json($file);
+    var_dump($movies_array);
 ?>
