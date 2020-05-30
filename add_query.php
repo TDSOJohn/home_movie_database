@@ -38,13 +38,23 @@
         }
     }
 
+#   decodes array or object(stdClass) and writes string to file
+    function write_json_to_file($filename, $cod_content)
+    {
+        $dec_content = json_decode($cod_content);
+        $handle = fopen($filename, 'w');
+        fclose($handle);
+    }
+
     $title = $_GET['name'];
     $url = return_query_url($title);
     $json_movie_info = curl_call($url);
-
     var_dump(json_decode($json_movie_info));
 
     $file = 'movies_database.json';
+
+    write_json_to_file($file, $json_movie_info);
+
     $movies_array = read_from_json($file);
     var_dump($movies_array);
 ?>
