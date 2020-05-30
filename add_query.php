@@ -16,11 +16,4 @@
 
     echo "\n $response";
     var_dump(json_decode($response));
-
-    ob_start();
-    var_dump($decoded_response);
-    var_dump(json_decode($response, true));
-    $result = ob_get_clean();
-    echo "\n $result";
-
 ?>
