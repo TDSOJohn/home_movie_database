@@ -23,6 +23,7 @@
 #   reads a file, attempts to decode with json_decode, returns array of object(stdClass) of FALSE
     function read_from_json($filename)
     {
+        echo "reading file...";
         if(file_exists($filename))
         {
             $handle = fopen($filename, 'r');
