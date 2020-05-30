@@ -1,6 +1,9 @@
 <?php
+    ini_set('display_errors', '1');
 
-ini_set('display_errors', '1');
+    $jsonobj = '{"Peter":35,"Ben":37,"Joe":43}';
+    var_dump(json_decode($jsonobj));
+
 #    var_dump($_SERVER);
     $title = $_GET['name'];
     $key = '74a10e01';
