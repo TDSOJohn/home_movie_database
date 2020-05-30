@@ -13,3 +13,5 @@
 
     var_dump(json_decode($response));
 ?>
+
+# load HTML from a file
