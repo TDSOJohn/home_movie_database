@@ -26,7 +26,7 @@
         echo "reading file...";
         if(file_exists($filename) && filesize($filename))
         {
-            $handle = fopen($filename, 'r');
+            $handle = fopen($filename, "r");
             $cod_content = fread($handle, filesize($filename));
             fclose($handle);
 
@@ -42,7 +42,7 @@
     function write_json_to_file($filename, $cod_content)
     {
         $dec_content = json_decode($cod_content);
-        $handle = fopen($filename, 'w');
+        $handle = fopen($filename, "w");
         fclose($handle);
     }
 
