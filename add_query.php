@@ -2,10 +2,12 @@
     ini_set('display_errors', '1');
 
 #   returns the correct query url, complete with api key
-    function return_query_url($in_string)
+    function return_omdb_query_url($in_string)
     {
         $key = '74a10e01';
         $url = 'http://www.omdbapi.com/?'.'apikey='.$key.'&t='.$in_string;
+        echo "$url\r";
+        
         return $url;
     }
 
@@ -16,6 +18,7 @@
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $out_data = curl_exec($ch);
         curl_close($ch);
+        echo "$out_data\r";
 
         return $out_data;
     }
@@ -47,7 +50,7 @@
     }
 
     $title = $_GET['name'];
-    $url = return_query_url($title);
+    $url = return_omdb_query_url($title);
     $json_movie_info = curl_call($url);
     var_dump(json_decode($json_movie_info));
 
