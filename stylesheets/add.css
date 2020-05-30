@@ -9,7 +9,7 @@
 
 .main_content h1 {
     color: #ccc;
-    padding: 100px 0px 0px 100px;
+    padding: 50px 0px 0px 50px;
     font-size: 48px;
     box-sizing: border-box;
 }
@@ -65,17 +65,18 @@
 
 @media(max-width: 800px) {
     .main_content {
-        padding-top: 150px;
+        padding-top: 80px;
     }
     .main_content h1 {
         width: 100%;
         text-align: center;
         padding: 25px;
+        margin: 0;
     }
     .input_section label {
         display: block;
         width: 100%;
-        padding: 20px;
+        padding: 10px;
     }
     .input_section input {
         display: block;
