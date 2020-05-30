@@ -24,7 +24,7 @@
     function read_from_json($filename)
     {
         echo "reading file...";
-        if(file_exists($filename))
+        if(file_exists($filename) && filesize($filename))
         {
             $handle = fopen($filename, 'r');
             $cod_content = fread($handle, filesize($filename));
