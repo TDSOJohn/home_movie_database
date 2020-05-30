@@ -33,7 +33,7 @@
             return $dec_content;
         } else
         {
-            return FALSE;
+            return "unable to read file, sry \n";
         }
     }
 
