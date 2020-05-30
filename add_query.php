@@ -6,8 +6,8 @@
     {
         $key = '74a10e01';
         $url = 'http://www.omdbapi.com/?'.'apikey='.$key.'&t='.$in_string;
-        echo "$url\r";
-        
+        echo "$url\n";
+
         return $url;
     }
 
@@ -18,7 +18,7 @@
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $out_data = curl_exec($ch);
         curl_close($ch);
-        echo "$out_data\r";
+        echo "$out_data\n";
 
         return $out_data;
     }
@@ -42,10 +42,11 @@
     }
 
 #   decodes array or object(stdClass) and writes string to file
-    function write_json_to_file($filename, $cod_content)
+    function write_json_to_file($filename, $dec_content)
     {
-        $dec_content = json_encode($cod_content);
+        $cod_content = json_encode($dec_content);
         $handle = fopen($filename, "w");
+        fwrite($handle, $cod_content);
         fclose($handle);
     }
 
