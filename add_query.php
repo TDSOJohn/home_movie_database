@@ -41,7 +41,7 @@
 #   decodes array or object(stdClass) and writes string to file
     function write_json_to_file($filename, $cod_content)
     {
-        $dec_content = json_decode($cod_content);
+        $dec_content = json_encode($cod_content);
         $handle = fopen($filename, "w");
         fclose($handle);
     }
