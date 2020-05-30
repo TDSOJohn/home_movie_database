@@ -15,10 +15,7 @@
     curl_close($ch);
 
     echo "\n $response";
-    $decoded_response = json_decode($response);
-
-    $a = array(1, 2, array("a", "b", "c"));
-    var_dump($a);
+    var_dump(json_decode($response));
 
     ob_start();
     var_dump($decoded_response);
@@ -27,10 +24,3 @@
     echo "\n $result";
 
 ?>
-
-
-object(stdClass)#1 (3) {
-    ["Peter"]=> int(35)
-    ["Ben"]=> int(37)
-    ["Joe"]=> int(43)
-}
