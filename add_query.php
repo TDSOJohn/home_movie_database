@@ -20,6 +20,11 @@
         return $out_data;
     }
 
+    function append_to_json($in_file, $in_data)
+    {
+        file_put_contents($in_file, $in_data, FILE_APPEND | LOCK_EX);
+    }
+
     $title = $_GET['name'];
     $url = return_query_url($title);
     $json_movie_info = curl_call($url);
@@ -27,4 +32,5 @@
     var_dump(json_decode($json_movie_info));
 
     $file = 'movies_database.json';
+    append_to_json($file, $json_movie_info);
 ?>
