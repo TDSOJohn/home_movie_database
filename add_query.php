@@ -24,7 +24,7 @@
     $url = return_query_url($title);
     $json_movie_info = curl_call($url);
 
-    var_dump(json_decode($response));
+    var_dump(json_decode($json_movie_info));
 
     $file = 'movies_database.json';
 ?>
