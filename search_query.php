@@ -24,6 +24,8 @@
 
     $dec_movies_db = json_decode($movies_db);
     var_dump($dec_movies_db);
+
+    echo($dec_movies_db->Title);
 ?>
 
 
