@@ -13,6 +13,7 @@
         return $url;
     }
 
+#   makes a curl call and returns decoded json content
     function curl_call($in_url)
     {
         $ch = curl_init();
@@ -27,7 +28,7 @@
         return $dec_content;
     }
 
-#   reads a file, attempts to decode with json_decode, returns array of object(stdClass) of FALSE
+#   reads a file, attempts to decode with json_decode, returns array of object(stdClass) or FALSE
     function read_from_json($filename)
     {
         echo "reading file...";
@@ -54,6 +55,7 @@
         fclose($handle);
     }
 
+#   searchs for
     function search_json_by_name($dec_content, $search, $name)
     {
         foreach($dec_content->Title as $item)
@@ -75,7 +77,7 @@
     $file = 'movies_database.json';
     $movies_db = read_from_json($file);
 
-    if(!search_json_by_name($movies_db, "Blade Runner", "Title"))
+#    if(!search_json_by_name($movies_db, "Blade Runner", "Title"))
     {
         write_json_to_file($file, $curl_json_data);
     }
