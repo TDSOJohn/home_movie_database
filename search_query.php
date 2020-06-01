@@ -21,6 +21,7 @@
     $db_filename = 'movies_db.json';
     $movies_db = read_from_json($db_filename);
 
+    echo $movies_db;
     $dec_movies_db = json_decode($movies_db);
     var_dump($dec_movies_db);
 
