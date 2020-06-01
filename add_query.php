@@ -56,7 +56,7 @@
     $url = return_omdb_query_url($title);
     $query_string_data = curl_call($url);
 
-    $file = 'movies_database.json';
+    $file = 'movies_db.json';
     write_to_file($file, $query_string_data);
 ?>
 
