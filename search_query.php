@@ -26,18 +26,3 @@
 
     echo($dec_movies_db->Title);
 ?>
-
-
-#   searchs for
-    function search_json_by_name($dec_content, $search, $name)
-    {
-        foreach($dec_content->Title as $item)
-        {
-            echo "$item";
-            if($item == $search)
-            {
-                return TRUE;
-            }
-        }
-        return FALSE;
-    }
