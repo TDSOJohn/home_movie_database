@@ -13,7 +13,7 @@
         return $url;
     }
 
-#   makes a curl call and returns decoded json content
+#   makes a curl call and returns page content as string
     function curl_call($in_url)
     {
         $ch = curl_init();
@@ -23,10 +23,8 @@
         curl_close($ch);
 
         echo $cod_content;
-        $dec_content = json_decode($cod_content);
-        var_dump("$dec_content\n");
 
-        return $dec_content;
+        return $cod_content;
     }
 
 #   reads a file, attempts to decode with json_decode, returns array of object(stdClass) or FALSE
@@ -58,7 +56,9 @@
 
     $title = $_GET['name'];
     $url = return_omdb_query_url($title);
-    $curl_json_data = curl_call($url);
+    $query_string_data = curl_call($url);
+
+    $file = 'movies_database.json';
 ?>
 
 var_dump($curl_json_data));

@@ -19,7 +19,7 @@
         }
     }
 
-    $db_filename = "movies_db.json";
+    $db_filename = 'movies_db.json';
     $movies_db = read_from_json($db_filename);
 
     var_dump($movies_db);
