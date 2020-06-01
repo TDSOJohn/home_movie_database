@@ -19,12 +19,12 @@
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "$in_url");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        $cod_content = curl_exec($ch);
+        $content = curl_exec($ch);
         curl_close($ch);
 
-        echo $cod_content;
+        echo $content;
 
-        return $cod_content;
+        return $content;
     }
 
 #   reads a file, attempts to decode with json_decode, returns array of object(stdClass) or FALSE
@@ -34,23 +34,21 @@
         if(file_exists($filename) && filesize($filename))
         {
             $handle = fopen($filename, "r");
-            $cod_content = fread($handle, filesize($filename));
+            $content = fread($handle, filesize($filename));
             fclose($handle);
 
-            $dec_content = json_decode($cod_content);
-            return $dec_content;
+            return $content;
         } else
         {
             return "unable to read file, sry \n";
         }
     }
 
-#   decodes array or object(stdClass) and writes string to file
-    function write_json_to_file($filename, $dec_content)
+#   writes string to file $filename
+    function write_to_file($filename, $string)
     {
-        $cod_content = json_encode($dec_content);
         $handle = fopen($filename, "w");
-        fwrite($handle, $cod_content);
+        fwrite($handle, $string);
         fclose($handle);
     }
 
@@ -59,6 +57,7 @@
     $query_string_data = curl_call($url);
 
     $file = 'movies_database.json';
+    write_to_file($file, $query_string_data);
 ?>
 
 var_dump($curl_json_data));

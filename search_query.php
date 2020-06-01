@@ -8,11 +8,10 @@
         if(file_exists($filename) && filesize($filename))
         {
             $handle = fopen($filename, "r");
-            $cod_content = fread($handle, filesize($filename));
+            $content = fread($handle, filesize($filename));
             fclose($handle);
 
-            $dec_content = json_decode($cod_content);
-            return $dec_content;
+            return $content;
         } else
         {
             return "unable to read file, sry \n";
