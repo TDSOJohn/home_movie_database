@@ -55,20 +55,6 @@
         fclose($handle);
     }
 
-#   searchs for
-    function search_json_by_name($dec_content, $search, $name)
-    {
-        foreach($dec_content->Title as $item)
-        {
-            echo "$item";
-            if($item == $search)
-            {
-                return TRUE;
-            }
-        }
-        return FALSE;
-    }
-
     $title = $_GET['name'];
     $url = return_omdb_query_url($title);
     $curl_json_data = curl_call($url);
@@ -77,9 +63,6 @@
     $file = 'movies_database.json';
     $movies_db = read_from_json($file);
 
-#    if(!search_json_by_name($movies_db, "Blade Runner", "Title"))
-    {
-        write_json_to_file($file, $curl_json_data);
-    }
+    write_json_to_file($file, $curl_json_data);
     var_dump($movies_db);
 ?>
