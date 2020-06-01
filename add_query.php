@@ -22,6 +22,7 @@
         $cod_content = curl_exec($ch);
         curl_close($ch);
 
+        echo $cod_content;
         $dec_content = json_decode($cod_content);
         var_dump("$dec_content\n");
 
