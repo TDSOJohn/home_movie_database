@@ -28,7 +28,7 @@ body {
 .nav_bar a {
     color: #eee;
     text-decoration: none;
-    padding: 20px 40px;
+    width: 100%;
 }
 
 a:hover {
@@ -36,8 +36,13 @@ a:hover {
     background-color: #555;
 }
 
+.this_page {
+    background-color: #444;
+}
+
 @media(max-width: 800px) {
     .nav_bar a {
+        padding: 0px;
         width: 100%;
     }
 }
