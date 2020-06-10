@@ -33,7 +33,7 @@ body {
     width: 100%;
 }
 
-a:hover {
+li:hover {
     text-decoration: none;
     background-color: #555;
 }
