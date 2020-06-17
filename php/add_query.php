@@ -11,6 +11,13 @@
     $url = return_omdb_query_url($title);
     $query_data = curl_call($url);
 
+    var_dump($query_data);
+
+    foreach($query_data->Search as $item)
+    {
+        echo $item->Title;
+    }
+
     $file = '../data/movies_db.json';
 #    write_to_file($file, $query_data);
 

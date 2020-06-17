@@ -10,6 +10,7 @@
 
         echo $content;
         $decoded_content = json_decode($content);
+        
         return $decoded_content;
     }
 
