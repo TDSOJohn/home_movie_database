@@ -11,6 +11,6 @@ function callPhp() {
         }
     };
 
-    xmlhttp.open("GET", "http://192.168.1.110/home_movie_database/php/add_query.php?name=" + title, true);
+    xmlhttp.open("GET", "http://192.168.1.110/home_movie_database/php/add_query.php?name=" + title + "&submit=Add", true);
     xmlhttp.send();
 }
