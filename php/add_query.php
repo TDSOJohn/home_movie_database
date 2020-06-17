@@ -19,15 +19,7 @@
     }
 
     $file = '../data/movies_db.json';
-#    write_to_file($file, $query_data);
+    write_to_file($file, $query_data);
 
 
 ?>
-
-var_dump($curl_json_data));
-
-$file = 'movies_database.json';
-$movies_db = read_from_json($file);
-
-write_json_to_file($file, $curl_json_data);
-var_dump($movies_db);

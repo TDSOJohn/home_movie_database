@@ -8,9 +8,8 @@
         $content = curl_exec($ch);
         curl_close($ch);
 
-        echo $content;
         $decoded_content = json_decode($content);
-        
+
         return $decoded_content;
     }
 
@@ -32,9 +31,10 @@
     }
 
 #   writes string to file $filename
-    function write_to_file($filename, $string)
+    function write_to_file($filename, $data_in)
     {
         $handle = fopen($filename, "w");
-        fwrite($handle, $string);
+        $encoded_data = json_encode($data_in);
+        fwrite($handle, $encoded_data);
         fclose($handle);
     }
