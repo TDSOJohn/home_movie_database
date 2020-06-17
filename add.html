@@ -21,7 +21,7 @@
 
         <div class="main_content">
             <h1>Add a Movie</h1>
-            <form action="php/add_query.php" method="get">
+            <form onsubmit="callPhp()">
                 <div class="search_box">
                     <div class="input_section">
                         <label>Name:</label>
@@ -30,6 +30,9 @@
                     <input class="button" type="submit" name="submit" value="Add" formenctype="text/plain">
                 </div>
             </form>
+        <div id="demo">
         </div>
+        </div>
+        <script src="javascript/json_interface.js"></script>
     </body>
 </html>
