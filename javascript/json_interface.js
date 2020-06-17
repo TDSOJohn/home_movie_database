@@ -1,4 +1,6 @@
 function callPhp() {
+    var title = document.getElementById('title').value;
+
     var xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function() {
@@ -8,6 +10,6 @@ function callPhp() {
         }
     };
 
-    xmlhttp.open("GET", "add_query.php", true);
+    xmlhttp.open("GET", "add_query.php?name=" + title, true);
     xmlhttp.send();
 }
