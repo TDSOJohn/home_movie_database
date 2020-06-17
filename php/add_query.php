@@ -21,5 +21,5 @@
     $file = '../data/movies_db.json';
     write_to_file($file, $query_data);
 
-
+    echo json_encode($query_data);
 ?>
