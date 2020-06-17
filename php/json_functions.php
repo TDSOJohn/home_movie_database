@@ -1,5 +1,5 @@
 <?php
-#   makes a curl call and returns page content as string
+#   makes a curl call and returns page content as php objects
     function curl_call($in_url)
     {
         $ch = curl_init();
@@ -9,8 +9,8 @@
         curl_close($ch);
 
         echo $content;
-
-        return $content;
+        $decoded_content = json_decode($content);
+        return $decoded_content;
     }
 
 #   reads a file, attempts to decode with json_decode, returns array of object(stdClass) or FALSE

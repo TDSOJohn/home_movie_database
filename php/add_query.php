@@ -1,6 +1,7 @@
-#   add a string which is movie title without whitespaces, punctuation
 
 <?php
+#   add a string which is movie title without whitespaces, punctuation
+
     ini_set('display_errors', '1');
 
     include 'omdb_functions.php';
@@ -8,10 +9,12 @@
 
     $title = $_GET['name'];
     $url = return_omdb_query_url($title);
-    $query_string_data = curl_call($url);
+    $query_data = curl_call($url);
 
-    $file = 'data/movies_db.json';
-    write_to_file($file, $query_string_data);
+    $file = '../data/movies_db.json';
+#    write_to_file($file, $query_data);
+
+
 ?>
 
 var_dump($curl_json_data));
